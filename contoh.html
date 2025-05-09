@@ -1,0 +1,52 @@
+""{% extends "layout.html" %}
+
+{% block title %}Contoh Soal{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Contoh Soal Rangkaian Kapasitor</h2>
+    <br>
+    <br>
+    <h4>Soal 1: Rangkaian Kapasitor Seri</h4>
+    <p>
+        Tiga buah kapasitor disusun sebagai berikut. Tentukan kapasitas kapasitor total kapasitor!
+    </p>
+    <img src="{{ url_for('static', filename='images/seri.png') }}" class="img-fluid" alt="Contoh Soal Kapasitor">
+    <p><strong>Pembahasan:</strong></p>
+    <p>Gunakan rumus kapasitor seri:</p>
+    <pre>1/Cs = 1/C₁ + 1/C₂ + 1/C₃</pre>
+    <p>
+        1/Cs = 1/2 + 1/3 + 1/4 = (6 + 4 + 3)/12 = 13/12 μF
+    </p>
+    <p>
+        Cs = 12/13 μF
+    </p>
+    <br>
+    <br>
+    <h4>Soal 2: Rangkaian Kapasitor Paralel</h4>
+    <p>
+        Tiga buah kapasitor disusun secara paralel dengan nilai C₁ = 2 μF, C₂ = 4 μF, dan C₃ = 6 μF. Kemudian dihubungkan ke sumber tegangan 10 volt. Hitung kapasitas total dari rangkaian tersebut!
+    </p>
+    <img src="{{ url_for('static', filename='images/paralel.png') }}" class="img-fluid" alt="Contoh Soal Kapasitor">
+    <p><strong>Pembahasan:</strong></p>
+    <p>Gunakan rumus kapasitor paralel:</p>
+    <pre>Cp = C₁ + C₂ + C₃ = 2 + 4 + 6 = 12 μF</pre>
+    <br>
+    <br>
+    <h4>Soal 3: Soal Kompleks</h4>
+    <p>
+        Lima kapasitor identik masing-masing 20 μF disusun seperti gambar di bawah dan dihubungkan ke sumber tegangan 6 V. Muatan total yang tersimpan pada kapasitor C₅ adalah...
+    </p>
+    <img src="{{ url_for('static', filename='images/kompleks.png') }}" class="img-fluid" alt="Contoh Soal Kapasitor">
+    <p><strong>Pembahasan:</strong></p>
+    <ol>
+        <li>C₁ dan C₂ seri → C₁₂ = (1/20 + 1/20)<sup>-1</sup> = 10 μF</li>
+        <li>C₃ dan C₄ seri → C₃₄ = (1/20 + 1/20)<sup>-1</sup> = 10 μF</li>
+        <li>C₁₂ dan C₃₄ paralel → C₁₂₃₄ = 10 + 10 = 20 μF</li>
+        <li>C₁₂₃₄ dan C₅ seri → C_total = (1/20 + 1/20)<sup>-1</sup> = 10 μF</li>
+        <li>Q_total = C_total × V = 10 μF × 6 V = 60 μC</li>
+        <li>Karena C₅ dan gabungan sebelumnya seri, maka muatannya sama: Q = 60 μC</li>
+    </ol>
+</div>
+{% endblock %}
+""

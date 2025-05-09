@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}Kalkulator Kapasitor{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center">Kalkulator Kapasitor</h1>
+      <form method="POST" action="/kalkulator">
+        <div class="form-group">
+          <label for="configuration">Jenis Rangkaian:</label>
+          <select class="form-control" id="configuration" name="configuration" required>
+            <option value="seri" {% if configuration == 'seri' %}selected{% endif %}>Seri</option>
+            <option value="paralel" {% if configuration == 'paralel' %}selected{% endif %}>Paralel</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Nilai Kapasitor (μF):</label>
+          <input type="text" class="form-control" name="capacitor" placeholder="Contoh: 2.2">
+          <input type="text" class="form-control mt-2" name="capacitor" placeholder="Contoh: 4.7">
+          <input type="text" class="form-control mt-2" name="capacitor" placeholder="Contoh: 10">
+          <input type="text" class="form-control mt-2" name="capacitor" placeholder="Contoh: 3.3">
+          <input type="text" class="form-control mt-2" name="capacitor" placeholder="Contoh: 1">
+        </div>
+
+        <div class="form-group">
+          <label for="voltage">Tegangan (V):</label>
+          <input type="number" step="any" class="form-control" id="voltage" name="voltage" value="{{ voltage or '' }}" required>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-block">Hitung</button>
+      </form>
+
+      {% if total_capacitance is not none %}
+      <div class="mt-4">
+        <h4>Hasil:</h4>
+        <p>Total Kapasitansi: {{ total_capacitance }} μF</p>
+      </div>
+      {% endif %}
+
+      {% if energy is not none %}
+      <div>
+        <p>Energi (E): {{ energy }} μJ</p>
+      </div>
+      {% endif %}
+
+      {% if charge is not none %}
+      <div>
+        <p>Muatan (Q): {{ charge }} μC</p>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

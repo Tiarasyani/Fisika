@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Kapasitor</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f4f4; }
+    h1, h2 { color: #2c3e50; }
+    code { background: #eaeaea; padding: 2px 4px; border-radius: 4px; }
+    .rumus { background-color: #fff; padding: 15px; border-left: 5px solid #3498db; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Rumus-Rumus Kapasitor</h1>
+
+  <div class="rumus">
+    <h2>1. Hubungan Muatan, Kapasitansi, dan Tegangan</h2>
+    <p><code>Q = C &times; V</code></p>
+  </div>
+
+  <div class="rumus">
+    <h2>2. Energi yang Disimpan dalam Kapasitor</h2>
+    <p><code>W = 1/2 &times; C &times; V<sup>2</sup></code></p>
+  </div>
+
+  <div class="rumus">
+    <h2>3. Kapasitansi Rangkaian Seri</h2>
+    <p><code>1 / C<sub>s</sub> = 1 / C<sub>1</sub> + 1 / C<sub>2</sub> + ... + 1 / C<sub>n</sub></code></p>
+  </div>
+
+  <div class="rumus">
+    <h2>4. Kapasitansi Ekuivalen Rangkaian Paralel</h2>
+    <p><code>C<sub>p</sub> = C<sub>1</sub> + C<sub>2</sub> + ... + C<sub>n</sub></code></p>
+  </div>
+
+</body>
+{% endblock %}
